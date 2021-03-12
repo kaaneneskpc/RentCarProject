@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Color } from 'src/app/models/color';
+import { ColorResponseModel } from 'src/app/models/colorResponseModel';
+import {HttpClient} from '@angular/common/http';
+import { ColorService } from 'src/app/services/color.service';
 @Component({
   selector: 'app-color',
   templateUrl: './color.component.html',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ColorComponent implements OnInit {
 
-  constructor() { }
+  colors: Color[]=[];
+  constructor(private colorService:ColorService) { }
 
   ngOnInit(): void {
+    this.getColors();
+  }
+
+  getColors(){
+    this.colorService.getColors().subscribe(response =>{
+     this.colors=response.data;
+    })
   }
 
 }
