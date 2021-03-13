@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Brand } from 'src/app/models/brand';
-import { BrandResponseModel } from 'src/app/models/brandResponseModel';
-import {HttpClient} from '@angular/common/http';
 import { BrandService } from 'src/app/services/brand.service';
 @Component({
   selector: 'app-brand',
