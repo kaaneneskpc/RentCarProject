@@ -9,6 +9,7 @@ import { RentalService } from 'src/app/services/rental.service';
 export class RentalComponent implements OnInit {
 
   rentals : Rental[]= [];
+  currentRental : Rental;
   dataLoaded = false;
   constructor(private rentalService:RentalService) { }
 
@@ -22,5 +23,19 @@ export class RentalComponent implements OnInit {
      this.dataLoaded=true;
     })
   }
+setCurrentRental(rental:Rental){
+    this.currentRental=rental;
+ }
+ 
+ getCurrentRentalClass(rental:Rental){
+ 
+   if(rental==this.currentRental){
+     return "list-group-item active"
+   }
+   else{
+     return "list-group-item"
+   }
+ 
+ }
 
 }
