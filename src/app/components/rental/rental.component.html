@@ -1,16 +1,10 @@
- <!-- <ul  class="list-group-horizontal">
-   
-  
-  <li (click)="setCurrentRental(rental)" 
-  *ngFor="let rental of rentals"
-  class="list-group-item">Id:{{rental.id}}</li>
-    </ul> -->
+
 
 <ul *ngFor="let rental of rentals" class="list-group">
   <!-- <li *ngFor="let category of categories" class="list-group-item">{{category.categoryId}}</li> -->
 
 
-  <li class="list-group-item">Rental Id : {{rental.id}} </li>
+  <!-- <li class="list-group-item">Rental Id : {{rental.id}} </li> -->
 
   <li (click)="setCurrentRental(rental)"
   routerLink = "/cars/rental/{{rental.carId}}"
