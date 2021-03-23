@@ -13,7 +13,8 @@ export class CarComponent implements OnInit {
 
  cars:Car[] =[];
  dataLoaded = false;
- 
+ filterText="";
+
   constructor(private carService:CarService) { }
 
   ngOnInit(): void {
