@@ -15,6 +15,7 @@ import { NaviComponent } from './components/navi/navi.component';
 import { FilterPipePipe } from './pipes/filter-pipe.pipe';
 
 import {ToastrModule} from 'ngx-toastr';
+import { CartSummaryComponent } from './components/cart-summary/cart-summary.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import {ToastrModule} from 'ngx-toastr';
     CustomerComponent,
     RentalComponent,
     NaviComponent,
-    FilterPipePipe
+    FilterPipePipe,
+    CartSummaryComponent
   ],
   imports: [
     BrowserModule,
