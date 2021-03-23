@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Car } from 'src/app/models/car';
 
 import { CarService } from 'src/app/services/car.service';
@@ -15,7 +17,7 @@ export class CarComponent implements OnInit {
  dataLoaded = false;
  filterText="";
 
-  constructor(private carService:CarService) { }
+  constructor(private carService:CarService,private activatedRoute:ActivatedRoute,private toastrService:ToastrService) { }
 
   ngOnInit(): void {
     this.getCars();
@@ -26,6 +28,10 @@ export class CarComponent implements OnInit {
      this.cars=response.data;
      this.dataLoaded=true;
     })
+  }
+
+  addToCart(car:Car){
+   this.toastrService.success("Added to Cart",car.description)
   }
 
 }

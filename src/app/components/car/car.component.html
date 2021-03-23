@@ -1,31 +1,35 @@
-<div *ngIf ="dataLoaded==false" class="spinner-grow" role="status">
-    <span class="visually-hidden">Loading...</span>
-  </div>
+<div *ngIf="dataLoaded==false" class="spinner-grow" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
 
-  <div class="mb-3">
-    <label for="filterText" class="form-label">Search</label>
-    <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Search Something..">
-  </div>
-  <div *ngIf="filterText" class="alert alert-primary">
-       You searched {{filterText}}.
-  </div>
+<div class="mb-3">
+  <label for="filterText" class="form-label">Search</label>
+  <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Search Something..">
+</div>
+<div *ngIf="filterText" class="alert alert-primary">
+  You searched {{filterText}}.
+</div>
 
- <table *ngIf="dataLoaded==true" class="table">
-     <thead>
-         <tr>
-             <td>Car Id</td>
-             <td>Brand Id</td>
-             <td>Color Id</td>
-             <td>Daily Price</td>
-             <td>Description</td>
-         </tr>
-     </thead>
-    <tr *ngFor = "let car of cars | filterPipe:filterText">
-        <td>{{car.id}}</td>
-        <td>{{car.brandId}}</td>
-        <td>{{car.colorId}}</td>
-        <td>{{car.dailyPrice}}</td>
-        <td>{{car.description}}</td>
+<table *ngIf="dataLoaded==true" class="table">
+  <thead>
+    <tr>
+      <td>Car Id</td>
+      <td>Brand Id</td>
+      <td>Color Id</td>
+      <td>Daily Price</td>
+      <td>Description</td>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let car of cars | filterPipe:filterText">
+      <td>{{car.id}}</td>
+      <td>{{car.brandId}}</td>
+      <td>{{car.colorId}}</td>
+      <td>{{car.dailyPrice}}</td>
+      <td>{{car.description}}</td>
+      <td><button (click)="addToCart(car)" type="button" class="btn btn-success">Add to Cart</button></td>
 
     </tr>
+  </tbody>
 </table>
