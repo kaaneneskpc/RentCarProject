@@ -1,6 +1,6 @@
 # CarRent
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.4.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.4.The project includes a car rental system. 
 
 ## Development server
 
@@ -27,4 +27,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
 ## ScreenShots
+
+![1](https://user-images.githubusercontent.com/32849662/112296221-c1921180-8ca5-11eb-95ca-27e459bb6ee5.PNG)
+![2](https://user-images.githubusercontent.com/32849662/112296233-c22aa800-8ca5-11eb-89af-52bf259fab1d.PNG)
 
